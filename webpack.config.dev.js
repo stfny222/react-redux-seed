@@ -1,11 +1,11 @@
-var path = require('path')
-var webpack = require('webpack')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+var path = require('path');
+var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'cheap-eval-source-map',
   entry: [
-    'webpack-dev-server/client',
+    'webpack-dev-server/client?http://localhost:1234',
     'webpack/hot/dev-server',
     './src/entrypoint'
   ],
@@ -35,7 +35,8 @@ module.exports = {
   devServer: {
     contentBase: './dist',
     host: '127.0.0.1',
-    port: '2202',
-    hot: true
+    port: '1234',
+    hot: true,
+    historyApiFallback: true
   }
-}
+};
