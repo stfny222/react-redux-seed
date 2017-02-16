@@ -1,8 +1,8 @@
 import React from 'react'
 
 // click/tap handlers for material-ui
-import injectTapEventPlugin from "react-tap-event-plugin"
-injectTapEventPlugin();
+import injectTapEventPlugin from 'react-tap-event-plugin'
+injectTapEventPlugin()
 
 // material-ui connector
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
@@ -17,7 +17,7 @@ const muiTheme = getMuiTheme({
     primary2Color: '#00ACCD',
     primary3Color: '#58595B',
   },
-});
+})
 
 // could include an AppBar or NavBar
 const initApp = (props) => (
@@ -26,6 +26,6 @@ const initApp = (props) => (
 				{props.children}
 			</main>
 		</MuiThemeProvider>
-);
+)
 
-export default initApp;
+export default initApp

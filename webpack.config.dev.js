@@ -1,6 +1,6 @@
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+var path = require('path')
+var webpack = require('webpack')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   devtool: 'cheap-eval-source-map',
@@ -21,16 +21,16 @@ module.exports = {
   ],
   module: {
     loaders: [{
-        test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
-      }, {
-        test: /.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-          presets: ['es2015', 'react']
-        }
-      }]
+      test: /\.scss$/,
+      loaders: ['style', 'css', 'sass']
+    }, {
+      test: /.js$/,
+      loader: 'babel-loader',
+      exclude: /node_modules/,
+      query: {
+        presets: ['es2015', 'react']
+      }
+    }]
   },
   devServer: {
     contentBase: './dist',
@@ -39,4 +39,4 @@ module.exports = {
     hot: true,
     historyApiFallback: true
   }
-};
+}

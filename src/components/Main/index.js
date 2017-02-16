@@ -1,29 +1,26 @@
 import React, { Component } from 'react'
-import RaisedButton from 'material-ui/RaisedButton';
+import RaisedButton from 'material-ui/RaisedButton'
+
+const styles = {
+  btn: {
+    marginRight: '10px'
+  }
+}
 
 export default class Counter extends Component {
   constructor(props) {
-    super(props);
-    // this.state = {count: props.initialCount};
-    // this.tick = this.tick.bind(this);
-  }
-  componentDidMount() {
-    console.log('COMPONENT DID MOUNT');
-  }
-  tick() {
-    this.setState({count: this.state.count + 1});
+    super(props)
+    this.state = {count: props.initialCount}
   }
   render() {
-    const { increment, count } = this.props;
+    const { increment, count } = this.props
 
     return (
-      <div>
-        Clicks: {count}
+      <div className='main-container'>
+        <h1> Clicks: {count} </h1>
         <br/>
-        <RaisedButton label="Primary" primary={true} onClick={increment} />
+        <RaisedButton label='Increment' primary={true} onClick={increment} style={styles.btn} />
       </div>
-    );
+    )
   }
 }
-// Counter.propTypes = { initialCount: React.PropTypes.number };
-Counter.defaultProps = { initialCount: 0 };
