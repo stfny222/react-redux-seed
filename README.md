@@ -15,6 +15,7 @@ Simple counter with basic configuration. Includes webpack configuration files fo
 - [React: a JavaScript library for building user interfaces](https://facebook.github.io/react/)
 - [Redux: a predictable state container for JavaScript apps](http://redux.js.org/)
 - [React Redux: Official React bindings for Redux](http://redux.js.org/docs/basics/UsageWithReact.html)
+- [React Router: a complete routing library for React](https://github.com/reactjs/react-router-tutorial)
 - [Webpack: a module bundler for modern JavaScript applications](http://webpack.github.io/)
 - [Ducks: Redux Reducer Bundles](https://github.com/erikras/ducks-modular-redux)
 
