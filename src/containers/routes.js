@@ -1,27 +1,20 @@
+import React from 'react'
+import { Route, IndexRoute } from 'react-router'
 import Layout from '../layout'
+import Main from './MainPage'
+import NotFound from './NotFound'
 
-// polyfill webpack require.ensure
-if (typeof require.ensure !== 'function') require.ensure = (d, c) => c(require)
-
-export default {
-	component: Layout,
-	childRoutes: [{
-		childRoutes: [
-		{
-			path: '/',
-			getComponent(location, callback) {
-				require.ensure([], (require) => {
-					callback(null, require("./MainPage").default)
-				}, 'mainpage.chunk')
-			},
-		},
-		{
-			path: "*",
-			getComponent: (location, callback) => {
-				require.ensure([], require => {
-					callback(null, require("./NotFound").default)
-				}, '404.chunk')
-			}
-		}]
-	}]
+const redirect = () => {
+  if (location.pathname=='/') {
+    location.pathname = '/index'
+  }
 }
+
+const routes = (
+		<Route path='/' component={ Layout } onEnter={ redirect } >
+			<Route path='/index' component={ Main } />
+			<Route path='*' component={ NotFound } />
+		</Route>
+)
+
+export default routes
