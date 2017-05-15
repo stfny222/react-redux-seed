@@ -1,6 +1,5 @@
 import MainPage from '../../components/Main'
 import { connect } from 'react-redux'
-// import { bindActionCreators } from 'redux'
 import { increment, decrement } from '../../redux/ducks/counter'
 
 const mapStateToProps = (state) => {

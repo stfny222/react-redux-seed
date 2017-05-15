@@ -1,9 +1,18 @@
-let loadedModule = null
+import React, { Component } from 'react'
+import { Provider } from 'react-redux'
+import { Router, browserHistory } from 'react-router'
+import withBasename from './withBasename'
+import Routes from '../routes'
 
-if (process.env.NODE_ENV === 'production') {
-  loadedModule = require('./Root.prod.js')
-} else {
-  loadedModule = require('./Root.dev.js')
+export const Root = class Root extends Component {
+  render() {
+    const { store } = this.props
+    return (
+      <Provider store={store}>
+        <div>
+          <Router history={ withBasename(browserHistory, __dirname) } routes={Routes} />
+        </div>
+      </Provider>
+    )
+  }
 }
-
-export const Root = loadedModule
