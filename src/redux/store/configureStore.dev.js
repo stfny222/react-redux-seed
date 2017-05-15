@@ -1,17 +1,18 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import rootReducer from '../reducers'
+// Logging actions/state to your console
 import createLogger from 'redux-logger'
+// Allows you to write action creators that return a function to perform asynchronous dispatch
 import thunk from 'redux-thunk'
-import DevTools from '../../containers/DevTools'
 
-//logging actions/state to your console
 const logger = createLogger()
 
-const finalCreateStore = compose(
+// Using Redux DevTools Extension installed in browser
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const finalCreateStore = composeEnhancers(
   // Middleware you want to use in development:
   applyMiddleware(logger, thunk),
-  // Required! Enable Redux DevTools with the monitors you chose
-  DevTools.instrument()
 )(createStore)
 
 module.exports = function configureStore(initialState) {

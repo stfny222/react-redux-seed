@@ -28,7 +28,6 @@ Simple counter with basic configuration. Includes webpack configuration files fo
     │   ├── assets                    # includes stylesheets and the base html template
     │   ├── components                # presentational components
     │   ├── containers                # container components
-    │       ├── DevTools              # shows actions and state over time in development
     │       ├── Root                  # root component for dev and prod
     │       ├── ...
     │       └── routes.js             # set up routes for react-router                
@@ -43,4 +42,3 @@ Simple counter with basic configuration. Includes webpack configuration files fo
     ├── .webpack.config.dev.js        # development configuration (including webpack-dev-server)
     ├── .webpack.config.prod.js       # production configuration
     └── ...
-
