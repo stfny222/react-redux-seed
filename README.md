@@ -11,11 +11,12 @@ Simple counter with basic configuration. Includes webpack configuration files fo
 5. http://localhost:1234/
 5. (npm run build)
 
-## Some features
+## Things you should get familiar with
 
 - [React: a JavaScript library for building user interfaces](https://facebook.github.io/react/)
 - [Redux: a predictable state container for JavaScript apps](http://redux.js.org/)
 - [React Redux: Official React bindings for Redux](http://redux.js.org/docs/basics/UsageWithReact.html)
+- [Redux Observable: RxJS 5-based middleware for Redux](https://redux-observable.js.org/)
 - [React Router: a complete routing library for React](https://github.com/reactjs/react-router-tutorial)
 - [Webpack: a module bundler for modern JavaScript applications](http://webpack.github.io/)
 - [Ducks: Redux Reducer Bundles](https://github.com/erikras/ducks-modular-redux)
@@ -28,12 +29,12 @@ Simple counter with basic configuration. Includes webpack configuration files fo
     │   ├── assets                    # includes stylesheets and the base html template
     │   ├── components                # presentational components
     │   ├── containers                # container components
-    │       ├── Root                  # root component for dev and prod
+    │       ├── Root                  # root component
     │       ├── ...
     │       └── routes.js             # set up routes for react-router                
-    │   ├── layout                    # base layout configuration with material-ui
+    │   ├── layout                    # base layout configuration with material-ui theme
     │   ├── redux     
-    │       ├── ducks                 # set of actions, reducer and action creators by feature
+    │       ├── ducks                 # set of actions, reducer, action creators and epics by feature
     │       ├── reducers              # root reducer
     │       └── store                 # store configuration for dev and prod
     │   └── entrypoint.js                  
