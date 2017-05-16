@@ -13,14 +13,15 @@ export default class Counter extends Component {
     this.state = {count: props.initialCount}
   }
   render() {
-    const { counter, increment, decrement } = this.props
+    const { counter, increment, decrement, incrementIfOdd } = this.props
 
     return (
       <div className='main-container'>
         <h1> Counter: {counter.count} </h1>
         <br/>
         <RaisedButton label='Increment' primary={true} onClick={increment} style={styles.btn} />
-        <RaisedButton label='Decrement' secondary={true} onClick={decrement} />
+        <RaisedButton label='Decrement' secondary={true} onClick={decrement} style={styles.btn} />
+        <RaisedButton label='Increment If Odd' onClick={incrementIfOdd} />
       </div>
     )
   }

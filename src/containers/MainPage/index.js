@@ -1,6 +1,6 @@
 import MainPage from '../../components/Main'
 import { connect } from 'react-redux'
-import { increment, decrement } from '../../redux/ducks/counter'
+import { increment, decrement, incrementIfOdd } from '../../redux/ducks/counter'
 
 const mapStateToProps = (state) => {
   return {
@@ -15,6 +15,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     decrement: () => {
       dispatch(decrement())
+    },
+    incrementIfOdd: () => {
+      dispatch(incrementIfOdd())
     }
   }
 }

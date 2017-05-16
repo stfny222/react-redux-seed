@@ -1,6 +1,7 @@
 // Actions
 const INCREMENT = 'counter/INCREMENT'
 const DECREMENT = 'counter/DECREMENT'
+const INCREMENT_IF_ODD = 'counter/INCREMENT_IF_ODD'
 
 // Initial state
 const mainInitialState = { count: 0 }
@@ -29,5 +30,17 @@ export const decrement = () => {
     type: DECREMENT
   }
 }
+
+export const incrementIfOdd = () => {
+  return {
+    type: INCREMENT_IF_ODD
+  }
+}
+
+// Epic
+export const incrementIfOddEpic = (action$, store) =>
+  action$.ofType(INCREMENT_IF_ODD)
+    .filter(() => store.getState().counter.count % 2 === 1)
+    .map(() => increment());
 
 export default reducer
