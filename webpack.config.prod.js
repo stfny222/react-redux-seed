@@ -4,7 +4,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   devtool: 'cheap-module-source-map',
-  entry: ['./src/entrypoint'],
+  entry: './src/entrypoint',
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -27,7 +27,7 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.scss$/,
-      loaders: ['style', 'css', 'sass']
+      loaders: ['style-loader', 'css-loader', 'sass-loader']
     }, {
       test: /.js$/,
       loader: 'babel-loader',

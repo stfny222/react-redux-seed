@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
-import { Router, browserHistory } from 'react-router'
-import withBasename from './withBasename'
-import Routes from '../routes'
+import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux'
+import createHistory from 'history/createBrowserHistory'
+import routes from '../routes'
+
+const history = createHistory()
 
 export const Root = class Root extends Component {
   render() {
@@ -10,7 +12,9 @@ export const Root = class Root extends Component {
     return (
       <Provider store={store}>
         <div>
-          <Router history={ withBasename(browserHistory, __dirname) } routes={Routes} />
+          <ConnectedRouter history={history}>
+            {routes}
+          </ConnectedRouter>
         </div>
       </Provider>
     )

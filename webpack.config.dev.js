@@ -4,11 +4,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   devtool: 'cheap-eval-source-map',
-  entry: [
-    'webpack-dev-server/client?http://localhost:1234',
-    'webpack/hot/dev-server',
-    './src/entrypoint'
-  ],
+  entry: './src/entrypoint',
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js'
@@ -22,7 +18,7 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.scss$/,
-      loaders: ['style', 'css', 'sass']
+      loaders: ['style-loader', 'css-loader', 'sass-loader']
     }, {
       test: /.js$/,
       loader: 'babel-loader',

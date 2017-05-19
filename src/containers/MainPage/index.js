@@ -1,5 +1,6 @@
 import MainPage from '../../components/Main'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 import { increment, decrement, incrementIfOdd } from '../../redux/ducks/counter'
 
 const mapStateToProps = (state) => {
@@ -22,4 +23,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MainPage)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MainPage))
